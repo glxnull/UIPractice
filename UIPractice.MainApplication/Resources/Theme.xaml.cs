@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace UIPractice.MainApplication
 {
@@ -16,7 +11,7 @@ namespace UIPractice.MainApplication
 
         private void CloseButtonClickCommand(object sender, RoutedEventArgs e)
         {
-           SystemCommands.CloseWindow(Application.Current.MainWindow);
+            SystemCommands.CloseWindow(Application.Current.MainWindow);
         }
 
         private void MinimizeButtonClickCommand(object sender, RoutedEventArgs e)
@@ -26,7 +21,14 @@ namespace UIPractice.MainApplication
 
         private void MaximazeButtonClickCommand(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            if (Application.Current.MainWindow.WindowState == WindowState.Maximized)
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            }
         }
     }
 }

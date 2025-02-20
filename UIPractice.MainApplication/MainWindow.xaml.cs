@@ -24,7 +24,7 @@ namespace UIPractice.MainApplication
         {
             InitializeComponent();
 
-            DataContext = new WindowViewModel(this);
+            DataContext = new WindowViewModel();
         }
     }
 }
