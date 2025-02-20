@@ -60,7 +60,7 @@
                                     <Button Content="r" Style="{StaticResource WindowChromeCloseButton}" Width="30" Height="25" x:Name="CloseButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Close" Click="CloseButtonClickCommand" />
                                     <Button Content="1" Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MaximizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" Click="MaximazeButtonClickCommand" />
                                     <Button Content="0" Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MinimizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Minimize" Click="MinimizeButtonClickCommand" />
-                                    <TextBlock VerticalAlignment="Center" Text="{TemplateBinding Title}" Margin="6,4" FontSize="13" Foreground="White" />
+                                    <TextBlock VerticalAlignment="Center" Text="{TemplateBinding Title}" Margin="10,8" FontSize="14" Foreground="White" />
                                 </DockPanel>
                             </DockPanel>
                         </Border>
