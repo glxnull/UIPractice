@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace UIPractice.MainApplication
 {
-    public class BaseVIewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
 

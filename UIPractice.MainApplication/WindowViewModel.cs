@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace UIPractice.MainApplication
 {
-    public class WindowViewModel : BaseVIewModel
+    public class WindowViewModel : BaseViewModel
     {
         private Window _window;
 
