@@ -26,5 +26,21 @@ namespace UIPractice.MainApplication
 
             DataContext = new WindowViewModel();
         }
+
+        private void Border_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (DataContext is WindowViewModel windowViewModel)
+            {
+                windowViewModel.MouseMoveCommand.Execute(e);
+            }
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (DataContext is WindowViewModel windowViewModel)
+            {
+                windowViewModel.MouseClickCommand.Execute(e);
+            }
+        }
     }
 }

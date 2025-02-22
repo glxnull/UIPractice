@@ -3,11 +3,6 @@
                     xmlns:local="clr-namespace:UIPractice.MainApplication"
                     x:Class="UIPractice.MainApplication.Theme">
     
-    <!-- Generic Theme -->
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="generic.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-        
     <!-- Main Colors -->
     <Color x:Key="MainColor">#FF595959</Color>
 
@@ -57,10 +52,45 @@
                             <DockPanel>
                                 <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" VerticalAlignment="Top" WindowChrome.IsHitTestVisibleInChrome="False"
                                            Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(WindowChrome.WindowChrome).ResizeBorderThickness}">
-                                    <Button Content="r" Style="{StaticResource WindowChromeCloseButton}" Width="30" Height="25" x:Name="CloseButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Close" Click="CloseButtonClickCommand" />
-                                    <Button Content="1" Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MaximizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" Click="MaximazeButtonClickCommand" />
-                                    <Button Content="0" Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MinimizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Minimize" Click="MinimizeButtonClickCommand" />
-                                    <TextBlock VerticalAlignment="Center" Text="{TemplateBinding Title}" Margin="10,8" FontSize="14" Foreground="White" />
+                                    <Button Style="{StaticResource WindowChromeCloseButton}" Width="30" Height="25" x:Name="CloseButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Close" Click="CloseButtonClickCommand">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                                    <Image Source="/Resources/Controls/close_window.png"
+                                                           Width="16" Height="16"
+                                                           RenderOptions.BitmapScalingMode="HighQuality" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MaximizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" Click="MaximazeButtonClickCommand">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                                    <Image Source="/Resources/Controls/maximize_window.png"
+                                                           Width="16" Height="16"
+                                                           RenderOptions.BitmapScalingMode="HighQuality" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button Style="{StaticResource WindowChromeButton}" Width="30" Height="25" x:Name="MinimizeButton" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Minimize" Click="MinimizeButtonClickCommand">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="Border" Background="{TemplateBinding Background}">
+                                                    <Image Source="/Resources/Controls/minimize_window.png"
+                                                           Width="16" Height="16"
+                                                           RenderOptions.BitmapScalingMode="HighQuality" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                                               Margin="0"
+                                               Padding="0,0,0,5"
+                                               Background="Black"
+                                               FontSize="14" Foreground="White"
+                                               VerticalAlignment="Center" />
                                 </DockPanel>
                             </DockPanel>
                         </Border>

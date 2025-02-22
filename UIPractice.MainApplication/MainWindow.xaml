@@ -7,8 +7,8 @@
         mc:Ignorable="d"        
         x:Name="ApplicationWindow"
         Style="{DynamicResource WindowChromeStyle}"
-        Title="Some Application" Height="400" Width="800">
-    
+        Title="Main Window" Height="400" Width="800">
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,11 +16,20 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
+
+    <!-- Application content -->
     <Grid>
-        <!-- Application content -->
         <Grid Margin="0,35,0,0">
-            
+            <Border Background="LightGray"
+                        MouseMove="Border_MouseMove"
+                        MouseDown="Border_MouseDown">
+                <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                    <TextBlock Text="{Binding DisplayText}"
+                                   FontSize="16"
+                                   Foreground="White" />
+                </StackPanel>
+            </Border>
         </Grid>
     </Grid>
 </Window>

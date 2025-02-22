@@ -21,14 +21,9 @@ namespace UIPractice.MainApplication
 
         private void MaximazeButtonClickCommand(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.MainWindow.WindowState == WindowState.Maximized)
-            {
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            }
+            Application.Current.MainWindow.WindowState = (Application.Current.MainWindow.WindowState == WindowState.Maximized) 
+                ? WindowState.Normal
+                : WindowState.Maximized;
         }
     }
 }
