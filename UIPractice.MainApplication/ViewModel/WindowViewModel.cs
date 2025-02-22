@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 
 namespace UIPractice.MainApplication
@@ -29,7 +28,7 @@ namespace UIPractice.MainApplication
 
         public WindowViewModel()
         {
-            _isClicked = false; 
+            _isClicked = false;
             MouseMoveCommand = new RelayCommand<MouseEventArgs>(OnMouseMove);
             MouseClickCommand = new RelayCommand<MouseButtonEventArgs>(OnMouseClick);
             MousePosition = new MousePositionInfo(0, 0);

@@ -3,11 +3,6 @@
                     xmlns:local="clr-namespace:UIPractice.MainApplication"
                     x:Class="UIPractice.MainApplication.Theme">
     
-    <!-- Generic Theme -->
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="generic.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-        
     <!-- Main Colors -->
     <Color x:Key="MainColor">#FF595959</Color>
 
