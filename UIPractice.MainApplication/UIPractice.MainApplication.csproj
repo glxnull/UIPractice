@@ -62,9 +62,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Utils\MousePositionInfo.cs" />
-    <Compile Include="Resources\Theme.xaml.cs">
-      <DependentUpon>Theme.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
