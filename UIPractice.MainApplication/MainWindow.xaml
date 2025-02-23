@@ -7,7 +7,8 @@
         mc:Ignorable="d"        
         x:Name="ApplicationWindow"
         Style="{DynamicResource WindowChromeStyle}"
-        Title="Main Window" Height="400" Width="800">
+        Title="Custom Window"
+        Width="800" Height="600">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,17 +18,90 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <!-- Application content -->
     <Grid>
-        <Grid Margin="0,35,0,0">
-            <Border Background="LightGray"
-                        MouseMove="Border_MouseMove"
-                        MouseDown="Border_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Custom title bar -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=Window}}"
+                       Margin="8,0,0,0"
+                       FontSize="16" Foreground="White"
+                       VerticalAlignment="Center" />
+
+            <Button x:Name="MinimizeButton" Style="{StaticResource WindowChromeButton}"
+                    Grid.Column="1"
+                    Width="30" Height="25"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    WindowChrome.IsHitTestVisibleInChrome="True"
+                    Click="MinimizeButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}">
+                            <Image Source="/Resources/Controls/minimize_window.png"
+                                   Width="16" Height="16"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="MaximizeButton" Style="{StaticResource WindowChromeButton}"
+                    Grid.Column="2"
+                    Width="30" Height="25"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    WindowChrome.IsHitTestVisibleInChrome="True"
+                    Click="MaximizeButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}">
+                            <Image Source="/Resources/Controls/maximize_window.png"
+                                   Width="16" Height="16"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="CloseButton" Style="{StaticResource WindowChromeCloseButton}"
+                    Grid.Column="3"
+                    Width="30" Height="25"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    WindowChrome.IsHitTestVisibleInChrome="True"
+                    Click="CloseButton_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}">
+                            <Image Source="/Resources/Controls/close_window.png"
+                                   Width="16" Height="16"
+                                   RenderOptions.BitmapScalingMode="HighQuality" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Border Background="#494950"
+                    MouseMove="Border_MouseMove"
+                    MouseDown="Border_MouseDown">
                 <StackPanel HorizontalAlignment="Center"
-                                VerticalAlignment="Center">
+                            VerticalAlignment="Center">
                     <TextBlock Text="{Binding DisplayText}"
-                                   FontSize="16"
-                                   Foreground="White" />
+                               FontSize="16"
+                               Foreground="White" />
                 </StackPanel>
             </Border>
         </Grid>
